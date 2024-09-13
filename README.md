@@ -61,6 +61,13 @@ Command Options:
 --per_worker: Specifies the number of samples per loop. Default: 3000.
 --hin_eng: Generates a Hindi-to-English (hin-eng) dataset. If not specified, the dataset will be generated for English-to-Hindi (eng-hin).
 Note: To generate a dataset for other language pairs, modify the commands in data_gen.py accordingly.
+# Real Dataset
+The VT Real Dataset used in the project as the evaluation. Two datasets are used for evaluation. They are:
+1. [BSTD](https://github.com/Bhashini-IITJ/BharatSceneTextDataset)
+2. [ICDAR 13](https://rrc.cvc.uab.es/?ch=2&com=downloads)
+please download the dataset from link above and json file can be found from link below:
+1. [BSTD](https://drive.google.com/file/d/1_gaRIPHlHgtzxbB_9GpzeISUxe5NRTG2/view?usp=sharing)
+2. [ICDAR](https://drive.google.com/file/d/1_gaRIPHlHgtzxbB_9GpzeISUxe5NRTG2/view?usp=sharing)
 # 1. SRNet++
 
 SRNet++ can be trained with the following command:
