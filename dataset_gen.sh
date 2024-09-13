@@ -1,17 +1,17 @@
 num_loops=20
 per_loop=30000
 hin_eng=false
-while [[$1 != ""]]; do
+while [$1 != ""]; do
     case $1 in
-    --num_loops)
+    "--num_workers")
         shift
         num_loops=$1
         ;;
-    --per_loop)
+    "--per_worker")
         shift
         per_loop=$1
         ;;
-    --hin_eng)
+    "--hin_eng")
         hin_eng=true
         ;;
     esac
