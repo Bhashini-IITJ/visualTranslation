@@ -1,0 +1,17 @@
+flask==3.0.0
+matplotlib==3.7.3
+numpy==1.24.4
+opencv-python==4.5.4.60
+pandas==2.0.3
+pillow==10.0.1
+protobuf==4.24.3
+regex==2023.10.3
+requests==2.28.2
+scikit-image==0.21.0
+scipy==1.10.1
+sentencepiece==0.1.99
+setuptools==60.2.0
+torch==1.13.1
+torchvision==0.14.1
+tqdm==4.65.2
+transformers==4.34.1
