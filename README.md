@@ -65,6 +65,7 @@ Note: To generate a dataset for other language pairs, modify the commands in dat
 The VT Real Dataset used in the project as the evaluation. Two datasets are used for evaluation. They are:
 1. [BSTD](https://github.com/Bhashini-IITJ/BharatSceneTextDataset)
 2. [ICDAR 13](https://rrc.cvc.uab.es/?ch=2&com=downloads)
+
 please download the dataset from link above and json file can be found from link below:
 1. [BSTD](https://drive.google.com/file/d/1_gaRIPHlHgtzxbB_9GpzeISUxe5NRTG2/view?usp=sharing)
 2. [ICDAR](https://drive.google.com/file/d/1_gaRIPHlHgtzxbB_9GpzeISUxe5NRTG2/view?usp=sharing)
