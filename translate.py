@@ -2,7 +2,7 @@ import argparse
 import json
 
 import torch
-from IndicTransTokenizer import IndicProcessor
+from IndicTransToolkit import IndicProcessor
 from tqdm import tqdm
 from transformers import (
     AutoModelForSeq2SeqLM,
@@ -29,7 +29,7 @@ if trans_model != "true":
 
     ip = IndicProcessor(inference=True)
     model = model.to(DEVICE)
-
+    model.eval()
     # Set the source and target languages
     if mode:
         src_lang, tgt_lang = "eng_Latn", "hin_Deva"
