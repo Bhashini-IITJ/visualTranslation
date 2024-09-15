@@ -89,7 +89,7 @@ conda activate srnet_plus_2
 python generate_o_t.py
 
 ## blend the crops
-python bland_o_t_bg.py
+python blend_o_t_bg.py
 
 ## generate the final output
 python create_final_images.py --output_folder "$output_folder"
