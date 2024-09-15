@@ -84,6 +84,9 @@ conda activate srnet_plus_2
 python generate_o_t.py
 ```
 please change the path according to your use case. The inputs for the inferece are i_s and i_t. Example given below.
+|**i_s**|**i_t**|
+|:--:|:--:|
+|![](asserts/i_s.png)|![](asserts/i_t.png)|
 
 # 2. scene-text detection/recognition
 In this project use SOTA scene text detection/recognition model, To from the file which contain the information of what and where is the word. The Scene Text Detection and Recognition models are DBNet and ParSeq respectively. The file is in the following format:
