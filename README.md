@@ -7,6 +7,8 @@
 </p>
 Implementation of Baseline for Scene Text-to-Scene Text Translation
 
+<img src="asserts/welcome.png" width="100%">
+
 # Environment setup for pipeline
 To setup the environment and necessary packages and libraries, run the following command:
 ```bash
@@ -20,13 +22,13 @@ eng-hin model : [link](https://drive.google.com/file/d/1OqloAgsdf-L9hmoeYCW3qrLd
 
 hin-eng model : [link](https://drive.google.com/file/d/1qb9aUjgGp53lJdfLPUnCVb7mEbd5-gNi/view?usp=sharing)
 # End-to-end usage 
-To get the result out of the this pipeline, you could run the following command:
+Input of the pipeline is the left image from above images and output of the pipeline is the right image from above images. To get the result out of the this pipeline, you could run the following command:
 ```bash
 source ./infer.sh -i <image_folder_path> -o <output_folder_path> -f <image_info_file> [ --M2M --hin_eng --de]
 ```
 The following are the options for the command:
-- -i: the path to the folder containing the images
-- -o: the path to the folder where the output will be saved
+- -i: the path to the folder containing the full Scene images
+- -o: the path to the folder where the output (full scene) will be saved
 - -f: the path to the json file containing the information of word in the image.
 - --M2M: use M2M translation model otherwise the indicTrans2 model will be used.
 - --hin_eng: use Hindi-English translation model otherwise English-Hindi translation model will be used.
@@ -43,7 +45,9 @@ Note:
     ...
 }
 ```
-2. if you are using the --hin_eng option, then change the path of model in parameter 'checkpoint' in cfg.py files
+where "bbox" are top-left and bottom-right coordinate
+
+2. If you are using the --hin_eng option, then change the path of model in parameter 'checkpoint' in cfg.py files
 # Dataset generation
 The dataset generation script is designed for ImageMagick v6 but can also work with ImageMagick v7, although you may encounter several warnings. The dataset can be generated for either English-to-Hindi (eng-hin) or Hindi-to-English (hin-eng) translations.
 
@@ -116,7 +120,7 @@ To enhance the design, a series of refined and newly introduced steps have been 
 - These paragraphs are translated and segmented into lines, ensuring alignment with the proportion of lines present in each original paragraph. Through cubic spline interpolation, new coordinates for each word within a line are determined, which are then linked back to the original crops of the words. : form_word_cropts.py, translate_de.py
 - Depending on the new width of the translated words, adjustments are made to the crops—either cutting or replicating them—to maintain the original style of the text. : modify_crops.py
 
-# Warning and troubleshot
+# Warning and troubleshooting
 - please make sure that imagemagick support png format after the setup.
 - Data generation code is written for imagemagickv6. It would work for imagemagickv7 but you will have a lots of warnings. 
 # Bibtex (how to cite us)
@@ -130,11 +134,11 @@ To enhance the design, a series of refined and newly introduced steps have been 
 ```
 
 # Acknowledgements
-1. SRNet
-2. indic scene text render
-3. Scene text eraser
-4. facebook-m2m
-5. IndicTrans2
+1. [SRNet](https://github.com/lksshw/SRNet)
+2. [indic scene text render](https://github.com/mineshmathew/IndicSceneTextRendering)
+3. [Scene text eraser](https://github.com/Onkarsus13/Diff_SceneTextEraser)
+4. [facebook-m2m](https://huggingface.co/facebook/m2m100_418M)
+5. [IndicTrans2](https://github.com/AI4Bharat/IndicTrans2)
 
 # Contact info
 1. Arvind Kumar Sharma - arvindji0201@gmail.com
