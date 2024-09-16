@@ -95,7 +95,7 @@ please change the path according to your use case. The inputs for the inferece a
 |![](assets/i_s.png)|![](assets/i_t.png)|
 
 # 2. scene-text detection/recognition
-In this project use SOTA scene text detection/recognition model, To from the file which contain the information of what and where is the word. The Scene Text Detection and Recognition models are DBNet and ParSeq respectively. The file is in the following format:
+In this project use SOTA scene text detection/recognition model, To form the json file which contains the information of what and where is the word. The Scene Text Detection and Recognition models are DBNet and ParSeq respectively. The file has to be in the following format:
 
 ```json
 {
