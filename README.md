@@ -7,7 +7,7 @@
 </p>
 Implementation of Baseline for Scene Text-to-Scene Text Translation
 
-<img src="asserts/welcome.png" width="100%">
+<img src="assets/welcome.png" width="100%">
 
 # Environment setup for pipeline
 To setup the environment and necessary packages and libraries, run the following command:
@@ -29,7 +29,7 @@ source ./infer.sh -i <image_folder_path> -o <output_folder_path> -f <image_info_
 The following are the options for the command:
 - -i: the path to the folder containing the full Scene images
 - -o: the path to the folder where the output (full scene) will be saved
-- -f: the path to the json file containing the information of word in the image.
+- -f: the path to the json file containing the information of words in the image.
 - --M2M: use M2M translation model otherwise the indicTrans2 model will be used.
 - --hin_eng: use Hindi-English translation model otherwise English-Hindi translation model will be used.
 - --de: use Design Enhancements in the pipeline
@@ -47,7 +47,9 @@ Note:
 ```
 where "bbox" are top-left and bottom-right coordinate
 
-2. If you are using the --hin_eng option, then change the path of model in parameter 'checkpoint' in cfg.py files
+2. For the purpose of running inference on the VT Real dataset, you can use the json files we provide in the [Real Dataset](#real-dataset) section
+
+3. If you are using the --hin_eng option, then change the path of model in parameter 'checkpoint' in cfg.py files
 # Dataset generation
 The dataset generation script is designed for ImageMagick v6 but can also work with ImageMagick v7, although you may encounter several warnings. The dataset can be generated for either English-to-Hindi (eng-hin) or Hindi-to-English (hin-eng) translations.
 
@@ -139,6 +141,7 @@ To enhance the design, a series of refined and newly introduced steps have been 
 3. [Scene text eraser](https://github.com/Onkarsus13/Diff_SceneTextEraser)
 4. [facebook-m2m](https://huggingface.co/facebook/m2m100_418M)
 5. [IndicTrans2](https://github.com/AI4Bharat/IndicTrans2)
+6. [Contrique]()
 
 # Contact info
 1. Arvind Kumar Sharma - arvindji0201@gmail.com
