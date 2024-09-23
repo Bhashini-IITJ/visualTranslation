@@ -13,16 +13,44 @@ Implementation of Baseline for Scene Text-to-Scene Text Translation
 Please follow the below instructions for inference on our VT-Real dataset. For detailed information for specific tasks check the [Documentation](#documentation)
 
 1. Clone the repo and set up the required dependencies
-```bash
-git clone https://github.com/Bhashini-IITJ/visualTranslation.git
-source ./setup.sh
-```
+    ```bash
+    git clone https://github.com/Bhashini-IITJ/visualTranslation.git
+    source ./setup.sh
+    ```
 
 2. Download the input VT-Real images (which are to be translated) (download details in the [Project page](https://vl2g.github.io/projects/visTrans/)) and put them in folders source_eng (Icdar images) and source_hin  (BSTD images) in the project directory.
 
 3. Download the translation checkpoints [eng_hin.model](https://drive.google.com/file/d/1OqloAgsdf-L9hmoeYCW3qrLdtNTQJisx/view?usp=sharing) and [hin_eng.model](https://drive.google.com/file/d/1qb9aUjgGp53lJdfLPUnCVb7mEbd5-gNi/view?usp=sharing) and put them in a folder named models inside the project directory.
 
-4. We need a 
+4. We need an i_s_info.json file carrying the information of word-level bounding boxes.Different files are required for different languages and different baselines based on whether we use DBNet+Parseq or oracle bounding boxes available in thee dataset.
+5. Download the json file from below table based on the baseline, rename it as i_s_info.json and place it in the home directory
+
+|**Language**|**B-4**|**B-5**|**B-6**|**B-7**|
+|:--:|:--:||:--:|:--:|
+|Eng -> Hin|[DBNet+Parseq](https://drive.google.com/file/d/1S8ayCLhO2EugF3CLQnHm9J7jJEAq8Hr_/view?usp=drive_link)|[Oracle](https://drive.google.com/file/d/1B3NZYJXMBwobUgJcXMN2WP0wa00W8Npi/view?usp=drive_link)|[DBNet+Parseq](https://drive.google.com/file/d/1S8ayCLhO2EugF3CLQnHm9J7jJEAq8Hr_/view?usp=drive_link)|[DBNet+Parseq](https://drive.google.com/file/d/1S8ayCLhO2EugF3CLQnHm9J7jJEAq8Hr_/view?usp=drive_link)|
+|Hin -> Eng|[DBNet+Parseq](https://drive.google.com/file/d/1_gaRIPHlHgtzxbB_9GpzeISUxe5NRTG2/view?usp=sharing)|[Oracle](https://drive.google.com/file/d/1F_IddWKhw4C4UXOEzH-8a3_4VNqCTias/view?usp=sharing)|[DBNet+Parseq](https://drive.google.com/file/d/1_gaRIPHlHgtzxbB_9GpzeISUxe5NRTG2/view?usp=sharing)|[Oracle](https://drive.google.com/file/d/1F_IddWKhw4C4UXOEzH-8a3_4VNqCTias/view?usp=sharing)|
+
+6)Then run the below command based on the required baseline and language translation direction
+  ### Eng - Hin
+  #### B4
+  ```bash
+  source ./infer.sh -i source_eng -o output_eng -f i_s_info.json --M2M
+  ```
+  #### B5 and B6 
+  (same command only i_s_info.json will be different)
+
+  ```bash
+  source ./infer.sh -i source_eng -o output_eng -f i_s_info.json 
+  ```
+
+  #### B7
+  Add an extra --de flag
+  ```bash
+  source ./infer.sh -i source_eng -o output_eng -f i_s_info.json --de
+  ```
+
+  ### Hin - Eng
+  For hin-eng we have the same commands as above but we add an extra --hin_eng flag at the end
 
 # Documentation
 ## Environment setup for pipeline
