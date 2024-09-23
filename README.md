@@ -22,8 +22,8 @@ Please follow the below instructions for inference on our VT-Real dataset. For d
 
 3. Download the translation checkpoints [eng_hin.model](https://drive.google.com/file/d/1OqloAgsdf-L9hmoeYCW3qrLdtNTQJisx/view?usp=sharing) and [hin_eng.model](https://drive.google.com/file/d/1qb9aUjgGp53lJdfLPUnCVb7mEbd5-gNi/view?usp=sharing) and put them in a folder named **model** inside the project directory.
 
-4. We need an "i_s_info.json" file carrying the information of word-level bounding boxes.Different files are required for different languages and different baselines based on whether we use DBNet+Parseq or oracle bounding boxes available in thee dataset.
-5. Download the json file from below table based on the baseline, rename it as i_s_info.json and place it in the home directory
+4. We need an "i_s_info.json" file carrying the information of word-level bounding boxes.Different files are required for different languages and different baselines based on whether we use DBNet+Parseq or oracle bounding boxes.
+5. Download the json file from the below table based on the baseline, rename it as i_s_info.json and place it in the project directory
 
 | **Language** | **B-4** | **B-5** | **B-6** | **B-7** |
 
@@ -33,28 +33,29 @@ Please follow the below instructions for inference on our VT-Real dataset. For d
 
 | Hin -> Eng | [DBNet+Parseq](https://drive.google.com/file/d/1_gaRIPHlHgtzxbB_9GpzeISUxe5NRTG2/view?usp=sharing) | [Oracle](https://drive.google.com/file/d/1F_IddWKhw4C4UXOEzH-8a3_4VNqCTias/view?usp=sharing) | [DBNet+Parseq](https://drive.google.com/file/d/1_gaRIPHlHgtzxbB_9GpzeISUxe5NRTG2/view?usp=sharing) | [Oracle](https://drive.google.com/file/d/1F_IddWKhw4C4UXOEzH-8a3_4VNqCTias/view?usp=sharing) |
 
-6)Then run the below command based on the required baseline and language translation direction
+6)Then run one of the below commands based on the required baseline and language translation direction
   ### Eng - Hin
   #### B4
   ```bash
-  source ./infer.sh -i source_eng -o output_eng -f i_s_info.json --M2M
+  source ./infer.sh -i source_eng -o output -f i_s_info.json --M2M
   ```
   #### B5 and B6 
-  (same command only i_s_info.json will be different)
+  (both have same command only i_s_info.json will be different)
 
   ```bash
-  source ./infer.sh -i source_eng -o output_eng -f i_s_info.json 
+  source ./infer.sh -i source_eng -o output -f i_s_info.json 
   ```
 
   #### B7
   Add an extra --de flag
   ```bash
-  source ./infer.sh -i source_eng -o output_eng -f i_s_info.json --de
+  source ./infer.sh -i source_eng -o output -f i_s_info.json --de
   ```
 
   ### Hin - Eng
   For hin-eng we have the same commands as above but we add an extra --hin_eng flag at the end
-
+  The translated images will be created in a new **output** folder 
+  
 # Documentation
 ## Environment setup for pipeline
 To setup the environment and necessary packages and libraries, run the following command:
