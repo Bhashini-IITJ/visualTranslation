@@ -51,8 +51,21 @@ Please follow the below instructions for inference on our VT-Real dataset. For d
   ```
 
   ### Hin - Eng
-  For hin-eng we have the same commands as above but we add an extra --hin_eng flag at the end
-  The translated images will be created in a new **output** folder 
+  #### B4
+  ```bash
+  source ./infer.sh -i source_hin -o output -f i_s_info.json --M2M --hin_eng
+  ```
+  #### B5 and B6 
+
+  ```bash
+  source ./infer.sh -i source_hin -o output -f i_s_info.json --hin_eng
+  ```
+
+  #### B7
+  Add an extra --de flag
+  ```bash
+  source ./infer.sh -i source_hin  -o output -f i_s_info.json --de --hin_eng
+  ```
   
 # Documentation
 ## Environment setup for pipeline
