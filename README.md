@@ -25,12 +25,10 @@ Please follow the below instructions for inference on our VT-Real dataset. For d
 4. We need an "i_s_info.json" file carrying the information of word-level bounding boxes.Different files are required for different languages and different baselines based on whether we use DBNet+Parseq or oracle bounding boxes.
 5. Download the json file from the below table based on the baseline, rename it as i_s_info.json and place it in the project directory
 
+
 | **Language** | **B-4** | **B-5** | **B-6** | **B-7** |
-
 | :-------: | :-------: | :-------: | :-------: | :-------: |
-
 | Eng -> Hin | [DBNet+Parseq](https://drive.google.com/file/d/1S8ayCLhO2EugF3CLQnHm9J7jJEAq8Hr_/view?usp=drive_link) | [Oracle](https://drive.google.com/file/d/1B3NZYJXMBwobUgJcXMN2WP0wa00W8Npi/view?usp=drive_link) | [DBNet+Parseq](https://drive.google.com/file/d/1S8ayCLhO2EugF3CLQnHm9J7jJEAq8Hr_/view?usp=drive_link) | [DBNet+Parseq](https://drive.google.com/file/d/1S8ayCLhO2EugF3CLQnHm9J7jJEAq8Hr_/view?usp=drive_link) |
-
 | Hin -> Eng | [DBNet+Parseq](https://drive.google.com/file/d/1_gaRIPHlHgtzxbB_9GpzeISUxe5NRTG2/view?usp=sharing) | [Oracle](https://drive.google.com/file/d/1F_IddWKhw4C4UXOEzH-8a3_4VNqCTias/view?usp=sharing) | [DBNet+Parseq](https://drive.google.com/file/d/1_gaRIPHlHgtzxbB_9GpzeISUxe5NRTG2/view?usp=sharing) | [Oracle](https://drive.google.com/file/d/1F_IddWKhw4C4UXOEzH-8a3_4VNqCTias/view?usp=sharing) |
 
 6)Then run one of the below commands based on the required baseline and language translation direction
