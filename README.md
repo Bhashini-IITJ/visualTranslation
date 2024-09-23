@@ -66,6 +66,9 @@ Please follow the below instructions for inference on our VT-Real dataset. For d
   ```bash
   source ./infer.sh -i source_hin  -o output -f i_s_info.json --de --hin_eng
   ```
+
+
+In all cases a new folder named **output** will be created and the translated images will be saved in it.
   
 # Documentation
 ## Environment setup for pipeline
