@@ -31,7 +31,7 @@ Please follow the below instructions for inference on our VT-Real dataset. For d
 | Eng -> Hin | [DBNet+Parseq](https://drive.google.com/file/d/1S8ayCLhO2EugF3CLQnHm9J7jJEAq8Hr_/view?usp=drive_link) | [Oracle](https://drive.google.com/file/d/1B3NZYJXMBwobUgJcXMN2WP0wa00W8Npi/view?usp=drive_link) | [DBNet+Parseq](https://drive.google.com/file/d/1S8ayCLhO2EugF3CLQnHm9J7jJEAq8Hr_/view?usp=drive_link) | [DBNet+Parseq](https://drive.google.com/file/d/1S8ayCLhO2EugF3CLQnHm9J7jJEAq8Hr_/view?usp=drive_link) |
 | Hin -> Eng | [DBNet+Parseq](https://drive.google.com/file/d/1_gaRIPHlHgtzxbB_9GpzeISUxe5NRTG2/view?usp=sharing) | [Oracle](https://drive.google.com/file/d/1F_IddWKhw4C4UXOEzH-8a3_4VNqCTias/view?usp=sharing) | [DBNet+Parseq](https://drive.google.com/file/d/1_gaRIPHlHgtzxbB_9GpzeISUxe5NRTG2/view?usp=sharing) | [Oracle](https://drive.google.com/file/d/1F_IddWKhw4C4UXOEzH-8a3_4VNqCTias/view?usp=sharing) |
 
-6)Then run one of the below commands based on the required baseline and language translation direction
+6. Then run one of the below commands based on the required baseline and language translation direction
   ### Eng - Hin
   #### B4
   ```bash
