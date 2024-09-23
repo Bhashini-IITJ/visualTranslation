@@ -27,7 +27,7 @@ Please follow the below instructions for inference on our VT-Real dataset. For d
 
 | **Language** | **B-4** | **B-5** | **B-6** | **B-7** |
 
-|:-------:|:-------:|:-------:|:-------:|
+| :-------: | :-------: | :-------: | :-------: |
 
 | Eng -> Hin | [DBNet+Parseq](https://drive.google.com/file/d/1S8ayCLhO2EugF3CLQnHm9J7jJEAq8Hr_/view?usp=drive_link) | [Oracle](https://drive.google.com/file/d/1B3NZYJXMBwobUgJcXMN2WP0wa00W8Npi/view?usp=drive_link) | [DBNet+Parseq](https://drive.google.com/file/d/1S8ayCLhO2EugF3CLQnHm9J7jJEAq8Hr_/view?usp=drive_link) | [DBNet+Parseq](https://drive.google.com/file/d/1S8ayCLhO2EugF3CLQnHm9J7jJEAq8Hr_/view?usp=drive_link) |
 
