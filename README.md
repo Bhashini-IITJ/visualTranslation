@@ -28,9 +28,7 @@ This release only supports inference on datasets used in the paper, i.e., BSTD a
 
 | **Language** | **B-7** |
 | :---: | :---: |
-
 | Eng -> Hin | [DBNet+Parseq](https://drive.google.com/file/d/1S8ayCLhO2EugF3CLQnHm9J7jJEAq8Hr_/view?usp=drive_link) |
-
 | Hin -> Eng | [Oracle](https://drive.google.com/file/d/1F_IddWKhw4C4UXOEzH-8a3_4VNqCTias/view?usp=sharing) |
 
 6. Then run one of the below commands based on the required baselines and language translation direction
