@@ -34,20 +34,16 @@ This release only supports inference on datasets used in the paper, i.e., BSTD a
 | Eng | [json file for precomputed word bounding boxes](https://drive.google.com/file/d/1S8ayCLhO2EugF3CLQnHm9J7jJEAq8Hr_/view?usp=drive_link) |
 | Hin | [json file for oracle word bounding boxes](https://drive.google.com/file/d/1F_IddWKhw4C4UXOEzH-8a3_4VNqCTias/view?usp=sharing) |
 
-6. Then run one of the below commands based on the required baselines and language translation direction
+5. Then, run the following commands to obtain visual translation using our best performing baseline. In both cases a new folder named **output** will be created and the translated images will be saved in it.
   ### Eng &rarr; Hin
-  #### B7
   ```bash
   source ./infer.sh -i source_eng -o output -f engBB.json --de
   ```
   ### Hin &rarr; Eng
   Change the checkpoint path in cfg.py file to model/hin_eng.model
-  #### B7
   ```bash
   source ./infer.sh -i source_hin  -o output -f hinBB.json --de --hin_eng
   ```
-
-In both cases a new folder named **output** will be created and the translated images will be saved in it.
   
 # Training 
 ## Dataset generation
@@ -109,4 +105,4 @@ please change the path according to your use case. The inputs for the inferece a
 5. [IndicTrans2](https://github.com/AI4Bharat/IndicTrans2)
 
 ## Contact info
-1. Arvind Kumar Sharma - arvindji0201@gmail.com
+In case of any issue/doubt, please raise Github issue and/or write to us: Arvind Kumar Sharma - arvindji0201@gmail.com.
