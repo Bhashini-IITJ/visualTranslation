@@ -38,6 +38,7 @@ This release only supports inference on datasets used in the paper, i.e., BSTD a
   source ./infer.sh -i source_eng -o output -f i_s_info.json --de
   ```
   ### Hin - Eng
+  Change the checkpoint path in cfg.py file to model/hin_eng.model
   #### B7
   ```bash
   source ./infer.sh -i source_hin  -o output -f i_s_info.json --de --hin_eng
@@ -50,7 +51,7 @@ In both cases a new folder named **output** will be created and the translated i
 ## Dataset generation
 The dataset generation script is designed for ImageMagick v6 but can also work with ImageMagick v7, although you may encounter several warnings. The dataset can be generated for either English-to-Hindi (eng-hin) or Hindi-to-English (hin-eng) translations.
 ### Setup Instructions:
-1. Download [this](https://drive.google.com/drive/folders/1Kf4RhqNQ6SP_YJALgWUMG0gvAkbK8S25) folder and add it to this repository.
+1. Download [this](https://drive.google.com/drive/folders/1Kf4RhqNQ6SP_YJALgWUMG0gvAkbK8S25) folder and add it to your project directory.
 2. Unzip all the files within the folder.
 3. Install the fonts located in the devanagari.zip file.
    
@@ -113,11 +114,10 @@ In this project use SOTA scene text detection/recognition model, To form the jso
 
 ## Acknowledgements
 1. [SRNet](https://github.com/lksshw/SRNet)
-2. [indic scene text render](https://github.com/mineshmathew/IndicSceneTextRendering)
+2. [Indic Scene Text Rendering](https://github.com/mineshmathew/IndicSceneTextRendering)
 3. [Scene text eraser](https://github.com/Onkarsus13/Diff_SceneTextEraser)
-4. [facebook-m2m](https://huggingface.co/facebook/m2m100_418M)
+4. [Facebook-m2m](https://huggingface.co/facebook/m2m100_418M)
 5. [IndicTrans2](https://github.com/AI4Bharat/IndicTrans2)
-6. [Contrique]()
 
 ## Contact info
 1. Arvind Kumar Sharma - arvindji0201@gmail.com
