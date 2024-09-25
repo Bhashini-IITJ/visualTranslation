@@ -27,7 +27,10 @@ This release only supports inference on datasets used in the paper, i.e., BSTD a
 
 
 | **Language** | **B-7** |
+| :---: | :---: |
+
 | Eng -> Hin | [DBNet+Parseq](https://drive.google.com/file/d/1S8ayCLhO2EugF3CLQnHm9J7jJEAq8Hr_/view?usp=drive_link) |
+
 | Hin -> Eng | [Oracle](https://drive.google.com/file/d/1F_IddWKhw4C4UXOEzH-8a3_4VNqCTias/view?usp=sharing) |
 
 6. Then run one of the below commands based on the required baselines and language translation direction
@@ -36,12 +39,8 @@ This release only supports inference on datasets used in the paper, i.e., BSTD a
   ```bash
   source ./infer.sh -i source_eng -o output -f i_s_info.json --de
   ```
-
   ### Hin - Eng
-  
-
   #### B7
-  Add an extra --de flag
   ```bash
   source ./infer.sh -i source_hin  -o output -f i_s_info.json --de --hin_eng
   ```
@@ -53,10 +52,10 @@ In both cases a new folder named **output** will be created and the translated i
 ## Dataset generation
 The dataset generation script is designed for ImageMagick v6 but can also work with ImageMagick v7, although you may encounter several warnings. The dataset can be generated for either English-to-Hindi (eng-hin) or Hindi-to-English (hin-eng) translations.
 ### Setup Instructions:
-1. Download this folder and add it to this repository.
+1. Download [this](https://drive.google.com/drive/folders/1Kf4RhqNQ6SP_YJALgWUMG0gvAkbK8S25) folder and add it to this repository.
 2. Unzip all the files within the folder.
 3. Install the fonts located in the devanagari.zip file.
->  the fonts located in the devanagari.zip file.
+   
 ### Generating the Dataset:
 To generate the dataset, run the following command:
 ```bash
