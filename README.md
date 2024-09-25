@@ -9,6 +9,10 @@ Implementation of Baseline for Scene Text-to-Scene Text Translation
 
 <img src="assets/welcome.png" width="100%">
 
+# Release updates:
+- [September 25, 2024] First Public Release (supports inference on datasets used using best performing baseline in the paper).
+  
+
 # Inference on datasets used 
 This release only supports inference on datasets used in the paper, i.e., BSTD and ICDAR 2013, and using precomputed scene text detection and recognition. Please follow the below instructions for inference on our VT-Real dataset. For detailed information for specific tasks check the [training](#training) section 
 
@@ -22,22 +26,22 @@ This release only supports inference on datasets used in the paper, i.e., BSTD a
 
 3. Download the translation checkpoints [eng_hin.model](https://drive.google.com/file/d/1OqloAgsdf-L9hmoeYCW3qrLdtNTQJisx/view?usp=sharing) and [hin_eng.model](https://drive.google.com/file/d/1qb9aUjgGp53lJdfLPUnCVb7mEbd5-gNi/view?usp=sharing) and put them in a folder named **model** inside the project directory.
 
-4. We need an "i_s_info.json" file carrying the information of word-level bounding boxes.Different files are required for different languages.
+4. We need an "i_s_info.json" file carrying the information of word-level bounding boxes. Different files are required for different languages.
 5. Download the json file from the below table based on the language, rename it as i_s_info.json and place it in the project directory
 
 
-| **Language** | **B-7** |
+| **Source &rarr; Target Language** | **B-7 (Best Performing Baseline)** |
 | :---: | :---: |
-| Eng -> Hin | [DBNet+Parseq](https://drive.google.com/file/d/1S8ayCLhO2EugF3CLQnHm9J7jJEAq8Hr_/view?usp=drive_link) |
-| Hin -> Eng | [Oracle](https://drive.google.com/file/d/1F_IddWKhw4C4UXOEzH-8a3_4VNqCTias/view?usp=sharing) |
+| Eng &rarr; Hin | [DBNet+Parseq](https://drive.google.com/file/d/1S8ayCLhO2EugF3CLQnHm9J7jJEAq8Hr_/view?usp=drive_link) |
+| Hin &rarr; Eng | [Oracle](https://drive.google.com/file/d/1F_IddWKhw4C4UXOEzH-8a3_4VNqCTias/view?usp=sharing) |
 
 6. Then run one of the below commands based on the required baselines and language translation direction
-  ### Eng - Hin
+  ### Eng &rarr; Hin
   #### B7
   ```bash
   source ./infer.sh -i source_eng -o output -f i_s_info.json --de
   ```
-  ### Hin - Eng
+  ### Hin &rarr; Eng
   Change the checkpoint path in cfg.py file to model/hin_eng.model
   #### B7
   ```bash
@@ -84,19 +88,6 @@ please change the path according to your use case. The inputs for the inferece a
 |**i_s**|**i_t**|
 |:--:|:--:|
 |![](assets/i_s.png)|![](assets/i_t.png)|
-
-## 2. scene-text detection/recognition
-In this project use SOTA scene text detection/recognition model, To form the json file which contains the information of what and where is the word. The Scene Text Detection and Recognition models are DBNet and ParSeq respectively. The file has to be in the following format:
-
-```json
-{
-    "100_0":{
-        "txt": "hello",
-        "bbox": [x1, y1, x2, y2]
-    },
-    ...
-}
-```
 
 
 ## Warning and troubleshooting
