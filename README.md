@@ -26,28 +26,26 @@ This release only supports inference on datasets used in the paper, i.e., BSTD a
 
 3. Download the translation checkpoints [eng_hin.model](https://drive.google.com/file/d/1OqloAgsdf-L9hmoeYCW3qrLdtNTQJisx/view?usp=sharing) and [hin_eng.model](https://drive.google.com/file/d/1qb9aUjgGp53lJdfLPUnCVb7mEbd5-gNi/view?usp=sharing) and put them in a folder named **model** inside the project directory.
 
-4. We need an "i_s_info.json" file carrying the information of word-level bounding boxes. Different files are required for different languages.
-5. Download the json file from the below table based on the language, rename it as i_s_info.json and place it in the project directory
+4. We provide precomputed/oracle word-level bounding boxes as json files. (In future release, we plan to integrate scene text detection and recognition implementation to our pipeline). Download these json files from the below table, rename them as engBB.json and hinBB.json for English and Hindi source language datasets, respectively. Then, keep them in the project directory.
 
 
-| **Source &rarr; Target Language** | **B-7 (Best Performing Baseline)** |
+| **Source Language** | **Word Bounding Boxes** |
 | :---: | :---: |
-| Eng &rarr; Hin | [DBNet+Parseq](https://drive.google.com/file/d/1S8ayCLhO2EugF3CLQnHm9J7jJEAq8Hr_/view?usp=drive_link) |
-| Hin &rarr; Eng | [Oracle](https://drive.google.com/file/d/1F_IddWKhw4C4UXOEzH-8a3_4VNqCTias/view?usp=sharing) |
+| Eng | [json file for precomputed word bounding boxes](https://drive.google.com/file/d/1S8ayCLhO2EugF3CLQnHm9J7jJEAq8Hr_/view?usp=drive_link) |
+| Hin | [json file for oracle word bounding boxes](https://drive.google.com/file/d/1F_IddWKhw4C4UXOEzH-8a3_4VNqCTias/view?usp=sharing) |
 
 6. Then run one of the below commands based on the required baselines and language translation direction
   ### Eng &rarr; Hin
   #### B7
   ```bash
-  source ./infer.sh -i source_eng -o output -f i_s_info.json --de
+  source ./infer.sh -i source_eng -o output -f engBB.json --de
   ```
   ### Hin &rarr; Eng
   Change the checkpoint path in cfg.py file to model/hin_eng.model
   #### B7
   ```bash
-  source ./infer.sh -i source_hin  -o output -f i_s_info.json --de --hin_eng
+  source ./infer.sh -i source_hin  -o output -f hinBB.json --de --hin_eng
   ```
-
 
 In both cases a new folder named **output** will be created and the translated images will be saved in it.
   
