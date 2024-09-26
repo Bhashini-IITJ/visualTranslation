@@ -14,7 +14,7 @@ Implementation of Baseline for Scene Text-to-Scene Text Translation
   
 
 # Inference on datasets used 
-This release only supports inference on datasets used in the paper, i.e., BSTD and ICDAR 2013, and using precomputed scene text detection and recognition. Please follow the below instructions for inference on our VT-Real dataset. For detailed information for specific tasks check the [training](#training) section 
+This release only supports training and inference on datasets used in the paper, i.e., BSTD and ICDAR 2013, and using precomputed scene text detection and recognition. Please follow the below instructions for inference on our VT-Real dataset. For detailed information for specific tasks check the [training](#training) section 
 
 1. Clone the repo and set up the required dependencies
     ```bash
