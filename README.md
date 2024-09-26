@@ -10,7 +10,7 @@ Implementation of Baseline for Scene Text-to-Scene Text Translation
 <img src="assets/welcome.png" width="100%">
 
 # Release updates:
-- [September 25, 2024] First Public Release (supports inference on datasets used using best performing baseline in the paper).
+- [September 25, 2024] First Public Release (supports training and inference on datasets used using best performing baseline in the paper. Currently, we supported precomputed scene text detection and recognition).
   
 
 # Inference on datasets used 
