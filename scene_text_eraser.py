@@ -20,7 +20,7 @@ os.makedirs(SAVE_IMAGE_PATH,exist_ok   = True)
 
 model_path = "onkarsus13/controlnet_stablediffusion_scenetextEraser"
 
-device = torch.device(device="cuda:1" if torch.cuda.is_available() else "cpu")
+device = torch.device(device="cuda" if torch.cuda.is_available() else "cpu")
 
 pipe = StableDiffusionControlNetSceneTextErasingPipeline.from_pretrained(model_path)
 
