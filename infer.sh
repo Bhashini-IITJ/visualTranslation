@@ -39,7 +39,7 @@ if [ "$de" = true ]; then
     python exclude_key_words.py --file "$input_file"
     python detect_para.py
 else
-    cp "$input_file" tmp/i_s.json
+    cp "$input_file" tmp/i_s_info.json
     cp "$input_file" tmp/para_info.json
     python form_para_info.py
 fi
