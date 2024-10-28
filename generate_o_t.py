@@ -9,7 +9,7 @@ from skimage import io
 import numpy as np
 from datagen import To_tensor
 
-device = torch.device('cuda:1' if torch.cuda.is_available() else 'cpu')
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 G = Generator(in_channels = 3).to(device)
 
 G.eval()
