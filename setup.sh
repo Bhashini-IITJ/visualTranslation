@@ -5,7 +5,7 @@
 root_dir=$(pwd)
 conda create -n itv2_hf python=3.9 -y
 conda activate itv2_hf
-conda install pip
+conda install pip -y
 python -m pip install --upgrade pip
 python -m pip install torch --extra-index-url https://download.pytorch.org/whl/cu118
 python -m pip install nltk sacremoses pandas regex mock transformers>=4.33.2 mosestokenizer
@@ -33,7 +33,7 @@ conda deactivate
 ## srnet_plus_2 environment
 conda create -n srnet_plus_2 python=3.8.0 -y
 conda activate srnet_plus_2
-pip install -r srnet_plus_2.txt
+pip install -r srnet_plus2.txt
 conda deactivate
 
 
