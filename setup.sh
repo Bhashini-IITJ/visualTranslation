@@ -21,7 +21,7 @@ conda deactivate
 
 ## scene text erasor environment
 git clone https://github.com/Onkarsus13/Diff_SceneTextEraser.git
-conda create -n scenee_text_erasor python=3.9 -y
+conda create -n scene_text_erasor python=3.9 -y
 conda activate scene_text_erasor
 cd Diff_SceneTextEraser
 pip install -e ".[torch]"
