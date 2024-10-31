@@ -31,7 +31,7 @@ cd $root_dir
 conda deactivate
 
 ## srnet_plus_2 environment
-conda create -n srnet_plus_2 python=3.8.0
+conda create -n srnet_plus_2 python=3.8.0 -y
 conda activate srnet_plus_2
 pip install -r srnet_plus_2.txt
 conda deactivate
