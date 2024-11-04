@@ -22,7 +22,7 @@ for img_name in tqdm(os.listdir(img_path)):
     mask = Image.new('L', (img.size[0], img.size[1]), 0)
     draw = ImageDraw.Draw(mask)
     for key in info:
-        if(key[0:3] == img_name[0:3]):
+        if(key.split("_")[0]==img_name.split(".")[0]):
             draw.rectangle(info[key]['bbox'],fill=255)
 
     mask.save(os.path.join(mask_path,img_name))        
