@@ -8,3 +8,9 @@ hinBB.json
 
 source_eng/*.jpg  
 source_hin/*.jpg 
+
+# Diff_SceneTextEraser 폴더 무시
+Diff_SceneTextEraser/
+
+# IndicTransToolkit 폴더 무시
+IndicTransToolkit/
