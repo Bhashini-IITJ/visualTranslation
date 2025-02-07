@@ -1,0 +1,12 @@
+Dockerfile 시작하는 법~
+
+
+1. bash anaconda_install.sh 를 실행한다.  -> 아나콘다 설치 파일 받을 것임
+
+2. docker build -t <하고싶은 이미지 이름> . -> 로 docker image 를 만들어준다.
+
+3. docker run -dit --name <하고싶은 컨테이너 이름> --gpus all --runtime=nvidia <이미지 이름> -> 이러면 컨테이너 이름 생성
+
+4. vscode 들어가서 Dev Container, Docker Extension 설치
+
+5. 좌측 아래 클릭 -> 실행중인 컨테이너 접속
