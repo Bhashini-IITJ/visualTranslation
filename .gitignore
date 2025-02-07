@@ -1,0 +1,10 @@
+# 모델 파일 제외
+model/eng_hin.model
+model/hin_eng.model
+
+# 경계 박스 JSON 파일 제외
+engBB.json
+hinBB.json
+
+source_eng/*.jpg  
+source_hin/*.jpg 
