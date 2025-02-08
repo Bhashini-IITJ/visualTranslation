@@ -14,3 +14,9 @@ Diff_SceneTextEraser/
 
 # IndicTransToolkit 폴더 무시
 IndicTransToolkit/
+
+
+__pycache__/
+cuda-keyring_1.0-1_all.deb
+output/
+tmp/
