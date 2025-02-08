@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-**무슨 기능이 필요한지 알려주세요 **
+**무슨 기능이 필요한지 알려주세요**
 A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
 
 **가장 적합하다고 생각되는 해결 방안을 적어주세요**
