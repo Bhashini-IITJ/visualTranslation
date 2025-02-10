@@ -46,6 +46,7 @@ cd Diff_SceneTextEraser
 pip install -e ".[torch]"
 pip install -e .[all,dev,notebooks]
 pip install jax==0.4.23 jaxlib==0.4.23
+pip install "huggingface_hub<0.26.0"
 cd $root_dir
 conda deactivate
 
