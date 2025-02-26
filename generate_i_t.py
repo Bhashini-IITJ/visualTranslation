@@ -34,3 +34,5 @@ for crop_name, label in tqdm(labels.items()):
     finalInputTextCommand += 'convert -  ' + save_file_path
     os.system(finalInputTextCommand.encode('utf-8'))
 os.system(f'rm -rf {temp_save_path}')
+
+print(f"<<<<<파일 확인>>>>> generate_i_t.py")

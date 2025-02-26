@@ -27,4 +27,4 @@ for img_name in tqdm(os.listdir(img_path)):
 
     mask.save(os.path.join(mask_path,img_name))        
 
-
+print(f"<<<<<파일 확인>>>>> make_masks.py")

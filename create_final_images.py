@@ -24,3 +24,4 @@ for img_id in img2info.keys():
         print("failed", img_id)
 
 os.system(f"mv tmp/output_base {args.output_folder}")
+print(f"<<<<<파일 확인>>>>> create_final_images.py")

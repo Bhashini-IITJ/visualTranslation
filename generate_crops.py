@@ -33,3 +33,4 @@ for img_id in tqdm(img_ids):
         print(f"Error in {img_id}")
 
 print("crops created.")
+print(f"<<<<<파일 확인>>>>> generate_crops.py")

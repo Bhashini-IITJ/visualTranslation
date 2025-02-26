@@ -17,3 +17,4 @@ for k, v in tqdm(data.items()):
         print(f"Error in {k}")
 
 print("crops transformed.")
+print(f"<<<<<파일 확인>>>>> modeify_crops.py")

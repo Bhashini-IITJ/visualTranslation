@@ -15,3 +15,5 @@ for img_id in img2info:
         cv2.imwrite(f"tmp/bg/{img_id}.png",img_bg)
     except:
         print(img_id)
+
+print(f"<<<<<파일 확인>>>>> make_bg.py")

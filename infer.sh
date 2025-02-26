@@ -17,11 +17,8 @@ while [ "$1" != "" ]; do
         shift
         input_file=$1
         ;;
-    "--M2M")
-        m2m=true
-        ;;
-    "--hin_eng")
-        hin_eng=true
+    "--eng_kor")
+        eng_kor=true #한영
         ;;
     "--de")
         de=true
@@ -36,7 +33,7 @@ mkdir -p tmp
 conda activate itv2_hf
 
 if [ "$de" = true ]; then
-    python exclude_key_words.py --file "$input_file"
+    python exclude_key_words.py --file "$input_file" 
     python detect_para.py
 else
     cp "$input_file" tmp/i_s_info.json
@@ -46,17 +43,17 @@ fi
 
 ## translation
 if [ "$de" = true ]; then
-    if [ "$hin_eng" = true ]; then
-        python translate_de.py --m2m $m2m
+    if [ "$kor_eng" = true ]; then
+        python translate_de.py 
     else
-        python translate_de.py --eng_to_hin --m2m $m2m
+        python translate_de.py --eng_to_kor
     fi
     python form_word_crops.py
 else
-    if [ "$hin_eng" = true ]; then
-        python translate.py --m2m $m2m
+    if [ "$kor_eng" = true ]; then
+        python translate.py 
     else
-        python translate.py --eng_to_hin --m2m $m2m
+        python translate.py --eng_to_kor
     fi
 fi
 
