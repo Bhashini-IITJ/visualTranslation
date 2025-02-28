@@ -24,3 +24,5 @@ for img_id in img2info.keys():
     bg = bg.crop(img2info[img_id]['bbox'])
     img.paste(bg, (int(img2info[img_id]['bbox'][0]), int(img2info[img_id]['bbox'][1])))
     img.save(f"tmp/output_base/{img_id2img[img_name]}")
+
+print(f"<<<<<파일 확인>>>>> make_output_base.py")

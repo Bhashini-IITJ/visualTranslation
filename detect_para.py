@@ -200,3 +200,4 @@ with open("tmp/para_info.json", "w") as f:
     json.dump(patch_info, f, indent=4)
 
 print("Paragraph detection done.")
+print(f"<<<<<파일 확인>>>>> detece_para.py")

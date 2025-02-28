@@ -64,10 +64,11 @@ if __name__ == "__main__":
     idx = img_name.split('.')[0]
     i_s_path = os.path.join('tmp/i_s', f'{idx}.png')
     i_t_path = os.path.join('tmp/i_t', f'{idx}.png')
-    out_path_1 = os.path.join(save_dir, f'{idx}.png')
+    out_path_1 = os.path.join(save_dir, f'{idx}.png') 
     try:
       infer(i_s_path, i_t_path, (128, 64), G, out_path_1)
     except:
       print(idx, "failed to generate")
       
   print("completed!")
+print(f"<<<<<파일 확인>>>>> generate_o_t.py")

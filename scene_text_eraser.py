@@ -52,5 +52,5 @@ for image_name in tqdm(os.listdir(MASK_IMAGE_PATH)):
     result_image = result_image.resize(original_image_size)
     result_image.save(os.path.join(SAVE_IMAGE_PATH,image_name))
 
-
+print(f"<<<<<파일 확인>>>>> scene_text_eraser.py")
 
