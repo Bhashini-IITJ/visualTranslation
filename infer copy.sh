@@ -68,18 +68,11 @@ python modify_crops.py
 ## creating i_t
 python generate_i_t.py
 
-## scene text eraser
 conda deactivate
 
+codna activate SRNet
 
-
-
-
-
-
-
-
-
+## 만들어진 폴더를 순회하면서 SRNet을 돌린다
 
 
 
