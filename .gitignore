@@ -22,5 +22,5 @@ output/
 tmp/
 
 *.ipynb
-first_test/SRNet/train_step-500000.model
+first_test/
 SRNet/train_step-500000.model
