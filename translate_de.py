@@ -2,7 +2,7 @@ import argparse
 import json
 
 import torch
-from IndicTransToolkit.IndicTransToolkit import IndicProcessor # 수정
+# from IndicTransToolkit.IndicTransToolkit import IndicProcessor # 수정
 from tqdm import tqdm
 from transformers import (
     AutoModelForSeq2SeqLM,
@@ -29,7 +29,7 @@ else:#한영
     tokenizer = MarianTokenizer.from_pretrained(model_name, trust_remote_code=True)
     model = MarianMTModel.from_pretrained(model_name, trust_remote_code=True)
 
-ip = IndicProcessor(inference=True)
+# ip = IndicProcessor(inference=True)
 model = model.to(DEVICE)
 model.eval()
 # Set the source and target languages

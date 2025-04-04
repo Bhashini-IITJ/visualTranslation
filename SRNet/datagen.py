@@ -59,34 +59,60 @@ class example_dataset(Dataset):
     
     def __init__(self, data_dir = cfg.example_data_dir, transform = None):
         
-        self.files = os.listdir(data_dir)
-        self.files = [i.split('_')[0] + '_' for i in self.files]
-        self.files = list(set(self.files))
+        # self.files = os.listdir(data_dir)
+        # self.files = [i.split('_')[0] + '_' for i in self.files]
+        # self.files = list(set(self.files))
+        self.i_t_dir = os.path.join(data_dir, 'i_t')
+        self.i_s_dir = os.path.join(data_dir, 'i_s')
+
+        # 공통 파일명 (예: 100_0.png) 추출
+        t_files = set(os.listdir(self.i_t_dir))
+        s_files = set(os.listdir(self.i_s_dir))
+        self.common_files = sorted(list(t_files & s_files))
         self.transform = transform
         
     def __len__(self):
-        return len(self.files)
-    
+        # return len(self.files)
+        return len(self.common_files)
     def __getitem__(self, idx):
         
-        img_name = self.files[idx]
+        # img_name = self.files[idx]
         
-        i_t = io.imread(os.path.join(cfg.example_data_dir, img_name + 'i_t.png'))
-        i_s = io.imread(os.path.join(cfg.example_data_dir, img_name + 'i_s.png'))
+        # i_t = io.imread(os.path.join(cfg.example_data_dir, img_name + 'i_t.png'))
+        # i_s = io.imread(os.path.join(cfg.example_data_dir, img_name + 'i_s.png'))
+        # h, w = i_t.shape[:2]
+        # scale_ratio = cfg.data_shape[0] / h
+        # to_h = cfg.data_shape[0]
+        # to_w = int(round(int(w * scale_ratio) / 8)) * 8
+        # to_scale = (to_h, to_w)
+        
+        # i_t = resize(i_t, to_scale, preserve_range=True)
+        # i_s = resize(i_s, to_scale, preserve_range=True)
+        
+        # sample = (i_t, i_s, img_name)
+        
+        # if self.transform:
+        #     sample = self.transform(sample)
+        
+        # return sample
+        img_name = self.common_files[idx]
+
+        i_t = io.imread(os.path.join(self.i_t_dir, img_name))[..., :3] 
+        i_s = io.imread(os.path.join(self.i_s_dir, img_name))[..., :3] 
+
         h, w = i_t.shape[:2]
         scale_ratio = cfg.data_shape[0] / h
         to_h = cfg.data_shape[0]
         to_w = int(round(int(w * scale_ratio) / 8)) * 8
         to_scale = (to_h, to_w)
-        
+
         i_t = resize(i_t, to_scale, preserve_range=True)
         i_s = resize(i_s, to_scale, preserve_range=True)
-        
-        sample = (i_t, i_s, img_name)
-        
+
+        sample = (i_t, i_s, img_name.split('.')[0])  # 확장자 제거한 이름 사용
         if self.transform:
             sample = self.transform(sample)
-        
+
         return sample
     
         

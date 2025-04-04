@@ -41,3 +41,4 @@ torchvision==0.14.0
 tornado==4.5.3
 tqdm==4.41.1
 urllib3==1.24.3
+scikit-image==0.19.3

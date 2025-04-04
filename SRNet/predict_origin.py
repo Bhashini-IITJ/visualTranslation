@@ -97,7 +97,7 @@ def main():
         o_b = F.to_pil_image((o_b + 1)/2)
         o_f = F.to_pil_image((o_f + 1)/2)
                         
-        o_f.save(os.path.join(args.save_dir, name + 'o_f.png'))
+        o_f.save(os.path.join(args.save_dir, name + '.png'))
 
         #Uncomment the following if you need to save the rest of the predictions
 
