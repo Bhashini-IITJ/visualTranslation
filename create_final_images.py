@@ -2,7 +2,6 @@ from PIL import Image
 import json
 import os
 import argparse
-import shutil
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--output_folder", type=str, required=True)
@@ -15,36 +14,45 @@ source_folder = "source_eng"
 
 # 로드
 img2info = json.load(open(para_info_path, "r"))
-imgs = os.listdir(source_folder)
-
-# 파일 이름 매핑 (ex: "100" → "100_0.png")
-id2img = {}
-for img in imgs:
-    img_base = img.split(".")[0].split("_")[0]  # "100_0.png" → "100"
-    id2img[img_base] = img
 
 # 결과 폴더 생성
 os.makedirs(args.output_folder, exist_ok=True)
 
-# 이미지에 붙이기
-for img_id in img2info.keys():
+# 캐시: 원본 이미지 하나씩만 로드하고 저장하기 위함
+image_cache = {}
+
+# 루프: 모든 o_f 붙이기
+for img_id, info in img2info.items():
     try:
-        base_id = img_id.split("_")[0]
-        src_img_name = id2img[base_id]
-        img_path = os.path.join(source_folder, src_img_name)
-        overlay_path = os.path.join(o_f_dir, f"{img_id}.png")
+        base_id = img_id.split("_")[0]            # ex: "178_0" → "178"
+        source_img_name = f"{base_id}.jpg"
+        source_img_path = os.path.join(source_folder, source_img_name)
 
-        img = Image.open(img_path).convert("RGB")
-        img_crop = Image.open(overlay_path).convert("RGB")
+        if base_id not in image_cache:
+            # 원본 이미지 처음 로드 시 → 복사해서 결과용 캐시 만들기
+            img = Image.open(source_img_path).convert("RGB")
+            image_cache[base_id] = img
+        else:
+            img = image_cache[base_id]
 
-        x1, y1, _, _ = img2info[img_id]['bbox']
-        img.paste(img_crop, (x1, y1))
+        # o_f crop 불러오기
+        crop_path = os.path.join(o_f_dir, f"{img_id}.png")
+        img_crop = Image.open(crop_path).convert("RGB")
 
-        # 결과 저장 (원본은 그대로 유지)
-        save_path = os.path.join(args.output_folder, src_img_name)
-        img.save(save_path)
+        # bbox 영역으로 크기 맞추기
+        x1, y1, x2, y2 = info["bbox"]
+        box_w, box_h = x2 - x1, y2 - y1
+        img_crop_resized = img_crop.resize((box_w, box_h))
+
+        # 붙이기
+        img.paste(img_crop_resized, (x1, y1))
 
     except Exception as e:
         print(f"[FAILED] {img_id}: {e}")
 
-print(f"<<<<< 파일 생성 완료 >>>>> 결과 폴더: {args.output_folder}")
+# 모든 이미지 저장
+for base_id, img in image_cache.items():
+    output_path = os.path.join(args.output_folder, f"{base_id}.png")
+    img.save(output_path)
+
+print(f"<<<<< 완료 >>>>> {args.output_folder}에 최종 이미지 저장됨.")
