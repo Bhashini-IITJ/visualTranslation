@@ -45,6 +45,12 @@ This release only supports training and inference on datasets used in the paper,
   source ./infer.sh -i source_hin  -o output -f hinBB.json --de --hin_eng
   ```
   
+  ### Eng &rarr; Kor
+  ```bash
+  source ./infer.sh -i source_eng -o output -f engBB.json --kor__eng = false --de
+  ```
+
+
 # Training 
 ## Dataset generation
 The dataset generation script is designed for ImageMagick v6 but can also work with ImageMagick v7, although you may encounter several warnings. The dataset can be generated for either English-to-Hindi (eng-hin) or Hindi-to-English (hin-eng) translations.
