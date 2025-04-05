@@ -47,7 +47,7 @@ This release only supports training and inference on datasets used in the paper,
   
   ### Eng &rarr; Kor
   ```bash
-  source ./infer.sh -i source_eng -o output -f engBB.json --kor__eng = false --de
+  source ./infer.sh -i source_eng -o output -f engBB.json --kor__eng=false --de
   ```
 
 
