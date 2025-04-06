@@ -37,23 +37,25 @@ pip install scipy
 cd $root_dir
 conda deactivate
 
-## ✅ Scene Text Eraser Environment Setup
-git clone https://github.com/Onkarsus13/Diff_SceneTextEraser.git
-conda create -n scene_text_eraser python=3.9 -y
-conda activate scene_text_eraser
+# ## ✅ Scene Text Eraser Environment Setup
+# git clone https://github.com/Onkarsus13/Diff_SceneTextEraser.git
+# conda create -n scene_text_eraser python=3.9 -y
+# conda activate scene_text_eraser
 
-cd Diff_SceneTextEraser
-pip install -e ".[torch]"
-pip install -e .[all,dev,notebooks]
-pip install jax==0.4.23 jaxlib==0.4.23
-pip install "huggingface_hub<0.26.0"
-cd $root_dir
-conda deactivate
+# cd Diff_SceneTextEraser
+# pip install -e ".[torch]"
+# pip install -e .[all,dev,notebooks]
+# pip install jax==0.4.23 jaxlib==0.4.23
+# pip install "huggingface_hub<0.26.0"
+# cd $root_dir
+# conda deactivate
 
-## ✅ SRNet Plus 2 Environment Setup
-conda create -n srnet_plus_2 python=3.8.0 -y
-conda activate srnet_plus_2
-pip install -r srnet_plus2.txt
+## ✅ SRNet Environment Setup
+conda create -n SRNet python=3.9.20 -y
+conda activate SRNet
+pip install -r SRNet/requirements.txt
+pip install torch==1.13.0+cu117 torchvision==0.14.0+cu117 -f https://download.pytorch.org/whl/torch_stable.html
+
 conda deactivate
 
 ## ✅ Install Image Processing Libraries
@@ -64,5 +66,12 @@ sudo apt install -y libpango1.0-dev libcairo2-dev imagemagick
 conda activate itv2_hf
 python -c "import torch; print('CUDA Available:', torch.cuda.is_available())"
 conda deactivate
+
+
+
+
+
+
+
 
 echo "🎉 Setup complete! Everything is ready to use with GPU acceleration."

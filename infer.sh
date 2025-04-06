@@ -67,27 +67,32 @@ python modify_crops.py
 
 ## creating i_t
 python generate_i_t.py
+conda deactivate
 
+conda activate SRNet
+python SRNet/predict_origin.py --input_dir ./tmp --save_dir ./tmp/o_f --checkpoint ./SRNet/train_step-500000.model
 ## scene text eraser
-conda deactivate
-conda activate scene_text_eraser
-python make_masks.py --folder "$input_folder"
-python scene_text_eraser.py --folder "$input_folder"
+# conda deactivate
+# conda activate scene_text_eraser
+# python make_masks.py --folder "$input_folder"
+# python scene_text_eraser.py --folder "$input_folder"
 
-## generating modified images
-python make_output_base.py --folder "$input_folder"
+# ## generating modified images
+# python make_output_base.py --folder "$input_folder"
 
-## generating bg
-python make_bg.py
+# ## generating bg
+# #python make_bg.py
 
-## infer srnet_plus_2
-conda deactivate
-conda activate srnet_plus_2
-python generate_o_t.py
+# ## infer srnet_plus_2
+# conda deactivate
+# conda activate srnet_plus_2
+# #python generate_o_t.py
 
-## blend the crops
-python blend_o_t_bg.py
+# ## blend the crops
+# python blend_o_t_bg.py
 
 ## generate the final output
+conda deactivate
+conda activate srnet_plus_2
 python create_final_images.py --output_folder "$output_folder"
 # rm -r tmp
